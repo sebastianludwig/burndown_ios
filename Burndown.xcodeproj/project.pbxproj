@@ -20,6 +20,12 @@
 		9EE0C51E1656D63100B485AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE0C4F91656D63100B485AC /* Foundation.framework */; };
 		9EE0C5261656D63100B485AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5241656D63100B485AC /* InfoPlist.strings */; };
 		9EE0C5291656D63100B485AC /* BurndownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE0C5281656D63100B485AC /* BurndownTests.m */; };
+		9EE0C5451656DABC00B485AC /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5411656DABC00B485AC /* CHANGELOG.md */; };
+		9EE0C5461656DABC00B485AC /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5411656DABC00B485AC /* CHANGELOG.md */; };
+		9EE0C5471656DABC00B485AC /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE0C5431656DABC00B485AC /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9EE0C5481656DABC00B485AC /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE0C5431656DABC00B485AC /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9EE0C5491656DABC00B485AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5441656DABC00B485AC /* README.md */; };
+		9EE0C54A1656DABC00B485AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5441656DABC00B485AC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,10 @@
 		9EE0C5251656D63100B485AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EE0C5271656D63100B485AC /* BurndownTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BurndownTests.h; sourceTree = "<group>"; };
 		9EE0C5281656D63100B485AC /* BurndownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BurndownTests.m; sourceTree = "<group>"; };
+		9EE0C5411656DABC00B485AC /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		9EE0C5421656DABC00B485AC /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		9EE0C5431656DABC00B485AC /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		9EE0C5441656DABC00B485AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,7 @@
 				9EE0C4FD1656D63100B485AC /* Burndown */,
 				9EE0C5211656D63100B485AC /* BurndownTests */,
 				9EE0C4F61656D63100B485AC /* Frameworks */,
+				9EE0C53E1656DA7A00B485AC /* Thrid Party Libraries */,
 				9EE0C4F41656D63100B485AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +160,25 @@
 				9EE0C5241656D63100B485AC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EE0C53E1656DA7A00B485AC /* Thrid Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9EE0C5401656DABC00B485AC /* JSONKit */,
+			);
+			name = "Thrid Party Libraries";
+			sourceTree = "<group>";
+		};
+		9EE0C5401656DABC00B485AC /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				9EE0C5411656DABC00B485AC /* CHANGELOG.md */,
+				9EE0C5421656DABC00B485AC /* JSONKit.h */,
+				9EE0C5431656DABC00B485AC /* JSONKit.m */,
+				9EE0C5441656DABC00B485AC /* README.md */,
+			);
+			path = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +254,8 @@
 			files = (
 				9EE0C5021656D63100B485AC /* InfoPlist.strings in Resources */,
 				9EE0C5141656D63100B485AC /* ViewController.xib in Resources */,
+				9EE0C5451656DABC00B485AC /* CHANGELOG.md in Resources */,
+				9EE0C5491656DABC00B485AC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE0C5261656D63100B485AC /* InfoPlist.strings in Resources */,
+				9EE0C5461656DABC00B485AC /* CHANGELOG.md in Resources */,
+				9EE0C54A1656DABC00B485AC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +295,7 @@
 				9EE0C5041656D63100B485AC /* main.m in Sources */,
 				9EE0C5081656D63100B485AC /* AppDelegate.m in Sources */,
 				9EE0C5111656D63100B485AC /* ViewController.m in Sources */,
+				9EE0C5471656DABC00B485AC /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE0C5291656D63100B485AC /* BurndownTests.m in Sources */,
+				9EE0C5481656DABC00B485AC /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +475,7 @@
 				9EE0C52E1656D63100B485AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EE0C52F1656D63100B485AC /* Build configuration list for PBXNativeTarget "BurndownTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +484,7 @@
 				9EE0C5311656D63100B485AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
