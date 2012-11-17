@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Sebastian Ludwig. All rights reserved.
 //
 
-#import "JSONKit.h"
-
 #import "ViewController.h"
+
+#import <JSONKit/JSONKit.h>
+#import "JDGroupedFlipNumberView.h"
 
 @implementation ViewController
 {
@@ -32,6 +33,12 @@
 {
     [super viewDidLoad];
 	[self refresh];
+	
+	JDGroupedFlipNumberView* flipView = [[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 5];
+    flipView.intValue = 11115;
+	//[flipView animateDownWithTimeInterval: 1.5];
+	[flipView animateUpWithTimeInterval:1.5];
+    [self.view addSubview:flipView];
 }
 
 #pragma mark -
