@@ -1,14 +1,24 @@
 
 SPEC CHECKSUMS: 
+  OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
+  OCHamcrest: 691d007cef8975adad8c9450f44b4a4f7b7c09e6
   JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
   AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
 
 COCOAPODS: 0.15.2
 
+EXTERNAL SOURCES: 
+  OCHamcrest: 
+    :git: https://github.com/sebastianludwig/OCHamcrest.git
+
 PODS: 
 - AFNetworking (1.0.1)
 - JSONKit (1.5pre)
+- OCHamcrest (1.9pre)
+- OCMock (2.0.1)
 
 DEPENDENCIES: 
 - AFNetworking (~> 1.0)
 - JSONKit (~> 1.4)
+- OCHamcrest (from `https://github.com/sebastianludwig/OCHamcrest.git')
+- OCMock (~> 2.0)

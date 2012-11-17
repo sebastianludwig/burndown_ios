@@ -36,6 +36,7 @@
 		9EE0C51E1656D63100B485AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE0C4F91656D63100B485AC /* Foundation.framework */; };
 		9EE0C5261656D63100B485AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EE0C5241656D63100B485AC /* InfoPlist.strings */; };
 		9EE0C5291656D63100B485AC /* BurndownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE0C5281656D63100B485AC /* BurndownTests.m */; };
+		AFEE0D693D834D3DAC56DF4B /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE5D1B4496846878EE4ECF9 /* libPods-Test.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,12 +84,14 @@
 		9EE0C5061656D63100B485AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EE0C5071656D63100B485AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9EE0C5131656D63100B485AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		9EE0C51A1656D63100B485AC /* BurndownTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BurndownTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EE0C51B1656D63100B485AC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9EE0C51A1656D63100B485AC /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE0C51B1656D63100B485AC /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9EE0C5231656D63100B485AC /* BurndownTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BurndownTests-Info.plist"; sourceTree = "<group>"; };
 		9EE0C5251656D63100B485AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EE0C5271656D63100B485AC /* BurndownTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BurndownTests.h; sourceTree = "<group>"; };
 		9EE0C5281656D63100B485AC /* BurndownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BurndownTests.m; sourceTree = "<group>"; };
+		F3CAC1E257E14DD68890AC83 /* Pods-Test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.xcconfig"; path = "Pods/Pods-Test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		FFE5D1B4496846878EE4ECF9 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 				9EE0C51C1656D63100B485AC /* SenTestingKit.framework in Frameworks */,
 				9EE0C51D1656D63100B485AC /* UIKit.framework in Frameworks */,
 				9EE0C51E1656D63100B485AC /* Foundation.framework in Frameworks */,
+				AFEE0D693D834D3DAC56DF4B /* libPods-Test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9E44A4491658090D0019D32C /* libPods.a */,
+				FFE5D1B4496846878EE4ECF9 /* libPods-Test.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				9EE0C53E1656DA7A00B485AC /* Thrid Party Libraries */,
 				9EE0C4F41656D63100B485AC /* Products */,
 				82739F3AD91B4543B22FFF8F /* Pods.xcconfig */,
+				F3CAC1E257E14DD68890AC83 /* Pods-Test.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				9EE0C4F31656D63100B485AC /* Burndown.app */,
-				9EE0C51A1656D63100B485AC /* BurndownTests.octest */,
+				9EE0C51A1656D63100B485AC /* Test.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,23 +281,24 @@
 			productReference = 9EE0C4F31656D63100B485AC /* Burndown.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9EE0C5191656D63100B485AC /* BurndownTests */ = {
+		9EE0C5191656D63100B485AC /* Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EE0C52F1656D63100B485AC /* Build configuration list for PBXNativeTarget "BurndownTests" */;
+			buildConfigurationList = 9EE0C52F1656D63100B485AC /* Build configuration list for PBXNativeTarget "Test" */;
 			buildPhases = (
 				9EE0C5151656D63100B485AC /* Sources */,
 				9EE0C5161656D63100B485AC /* Frameworks */,
 				9EE0C5171656D63100B485AC /* Resources */,
 				9EE0C5181656D63100B485AC /* ShellScript */,
+				2F1EAEB71A934E749C66E951 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				9EE0C5201656D63100B485AC /* PBXTargetDependency */,
 			);
-			name = BurndownTests;
+			name = Test;
 			productName = BurndownTests;
-			productReference = 9EE0C51A1656D63100B485AC /* BurndownTests.octest */;
+			productReference = 9EE0C51A1656D63100B485AC /* Test.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -316,7 +323,7 @@
 			projectRoot = "";
 			targets = (
 				9EE0C4F21656D63100B485AC /* Burndown */,
-				9EE0C5191656D63100B485AC /* BurndownTests */,
+				9EE0C5191656D63100B485AC /* Test */,
 			);
 		};
 /* End PBXProject section */
@@ -343,6 +350,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F1EAEB71A934E749C66E951 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Test-resources.sh\"\n";
+		};
 		3DB24173D85B45ADA49CBFE4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,6 +541,7 @@
 		};
 		9EE0C5301656D63100B485AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CAC1E257E14DD68890AC83 /* Pods-Test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Burndown.app/Burndown";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,7 +550,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Burndown/Burndown-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "BurndownTests/BurndownTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -538,6 +559,7 @@
 		};
 		9EE0C5311656D63100B485AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CAC1E257E14DD68890AC83 /* Pods-Test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Burndown.app/Burndown";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -546,7 +568,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Burndown/Burndown-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "BurndownTests/BurndownTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -575,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EE0C52F1656D63100B485AC /* Build configuration list for PBXNativeTarget "BurndownTests" */ = {
+		9EE0C52F1656D63100B485AC /* Build configuration list for PBXNativeTarget "Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EE0C5301656D63100B485AC /* Debug */,
