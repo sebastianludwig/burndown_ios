@@ -6,6 +6,6 @@
 //  Copyright (c) 2012 Sebastian Ludwig. All rights reserved.
 //
 
-@interface ViewController : UIViewController <NSURLConnectionDelegate>
+@interface ViewController : UIViewController
 
 @end
