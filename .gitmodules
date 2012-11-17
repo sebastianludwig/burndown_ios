@@ -4,3 +4,6 @@
 [submodule "JDFlipNumberView"]
 	path = JDFlipNumberView
 	url = https://github.com/jaydee3/JDFlipNumberView.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
