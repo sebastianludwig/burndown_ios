@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E44A4051656E3C70019D32C /* JDDateCountdownFlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44A3FF1656E3C70019D32C /* JDDateCountdownFlipView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9E44A4061656E3C70019D32C /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E44A4001656E3C70019D32C /* JDFlipNumberView.bundle */; };
+		9E44A4071656E3C70019D32C /* JDFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44A4021656E3C70019D32C /* JDFlipNumberView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9E44A4081656E3C70019D32C /* JDGroupedFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E44A4041656E3C70019D32C /* JDGroupedFlipNumberView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9E44A40B1656E5A20019D32C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E44A40A1656E5A20019D32C /* QuartzCore.framework */; };
 		9EE0C4F81656D63100B485AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE0C4F71656D63100B485AC /* UIKit.framework */; };
 		9EE0C4FA1656D63100B485AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE0C4F91656D63100B485AC /* Foundation.framework */; };
 		9EE0C4FC1656D63100B485AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE0C4FB1656D63100B485AC /* CoreGraphics.framework */; };
@@ -39,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E44A3FE1656E3C70019D32C /* JDDateCountdownFlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDDateCountdownFlipView.h; sourceTree = "<group>"; };
+		9E44A3FF1656E3C70019D32C /* JDDateCountdownFlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDDateCountdownFlipView.m; sourceTree = "<group>"; };
+		9E44A4001656E3C70019D32C /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
+		9E44A4011656E3C70019D32C /* JDFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipNumberView.h; sourceTree = "<group>"; };
+		9E44A4021656E3C70019D32C /* JDFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipNumberView.m; sourceTree = "<group>"; };
+		9E44A4031656E3C70019D32C /* JDGroupedFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGroupedFlipNumberView.h; sourceTree = "<group>"; };
+		9E44A4041656E3C70019D32C /* JDGroupedFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGroupedFlipNumberView.m; sourceTree = "<group>"; };
+		9E44A40A1656E5A20019D32C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9EE0C4F31656D63100B485AC /* Burndown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burndown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE0C4F71656D63100B485AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EE0C4F91656D63100B485AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E44A40B1656E5A20019D32C /* QuartzCore.framework in Frameworks */,
 				9EE0C4F81656D63100B485AC /* UIKit.framework in Frameworks */,
 				9EE0C4FA1656D63100B485AC /* Foundation.framework in Frameworks */,
 				9EE0C4FC1656D63100B485AC /* CoreGraphics.framework in Frameworks */,
@@ -88,9 +102,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E44A3FD1656E3C70019D32C /* JDFlipNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				9E44A3FE1656E3C70019D32C /* JDDateCountdownFlipView.h */,
+				9E44A3FF1656E3C70019D32C /* JDDateCountdownFlipView.m */,
+				9E44A4001656E3C70019D32C /* JDFlipNumberView.bundle */,
+				9E44A4011656E3C70019D32C /* JDFlipNumberView.h */,
+				9E44A4021656E3C70019D32C /* JDFlipNumberView.m */,
+				9E44A4031656E3C70019D32C /* JDGroupedFlipNumberView.h */,
+				9E44A4041656E3C70019D32C /* JDGroupedFlipNumberView.m */,
+			);
+			name = JDFlipNumberView;
+			path = JDFlipNumberView/JDFlipNumberView;
+			sourceTree = "<group>";
+		};
 		9EE0C4E81656D63100B485AC = {
 			isa = PBXGroup;
 			children = (
+				9E44A40A1656E5A20019D32C /* QuartzCore.framework */,
 				9EE0C4FD1656D63100B485AC /* Burndown */,
 				9EE0C5211656D63100B485AC /* BurndownTests */,
 				9EE0C4F61656D63100B485AC /* Frameworks */,
@@ -165,6 +195,7 @@
 		9EE0C53E1656DA7A00B485AC /* Thrid Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9E44A3FD1656E3C70019D32C /* JDFlipNumberView */,
 				9EE0C5401656DABC00B485AC /* JSONKit */,
 			);
 			name = "Thrid Party Libraries";
@@ -256,6 +287,7 @@
 				9EE0C5141656D63100B485AC /* ViewController.xib in Resources */,
 				9EE0C5451656DABC00B485AC /* CHANGELOG.md in Resources */,
 				9EE0C5491656DABC00B485AC /* README.md in Resources */,
+				9E44A4061656E3C70019D32C /* JDFlipNumberView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +328,9 @@
 				9EE0C5081656D63100B485AC /* AppDelegate.m in Sources */,
 				9EE0C5111656D63100B485AC /* ViewController.m in Sources */,
 				9EE0C5471656DABC00B485AC /* JSONKit.m in Sources */,
+				9E44A4051656E3C70019D32C /* JDDateCountdownFlipView.m in Sources */,
+				9E44A4071656E3C70019D32C /* JDFlipNumberView.m in Sources */,
+				9E44A4081656E3C70019D32C /* JDGroupedFlipNumberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
