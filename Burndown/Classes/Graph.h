@@ -13,4 +13,6 @@
 
 - (id)initWithDictionary:(NSDictionary*)dictionary;
 
+- (NSInteger)currentValue;
+
 @end

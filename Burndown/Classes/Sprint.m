@@ -7,14 +7,21 @@
 //
 
 #import "Sprint.h"
+#import "Graph.h"
 
 @implementation Sprint
 
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
 	if (self = [super init]) {
-		// TODO set number
-		// TDOO add graphs
+		self.number = [dictionary[@"number"] integerValue];
+		NSMutableArray* graphs = [NSMutableArray arrayWithCapacity:[dictionary[@"graphs"] count]];
+		for (NSDictionary* graphData in dictionary[@"graphs"]) {
+			Graph* graph = [[Graph alloc] initWithDictionary:graphData];
+			if (graph)
+				[graphs addObject:graph];
+		}
+		self.graphs = graphs;
 	}
 	return self;
 }

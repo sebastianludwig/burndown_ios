@@ -11,12 +11,13 @@
 #import "BurndownClient.h"
 #import <AFNetworking.h>
 #import "JDGroupedFlipNumberView.h"
+#import "Sprint.h"
+#import "Graph.h"
 
 @implementation ViewController
 {
-	NSURLConnection* connection;
-	NSMutableData* receivedData;
-	NSDictionary* json;
+	Sprint* sprint;
+	NSMutableArray* flipViews;
 }
 
 #pragma mark -
@@ -25,7 +26,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		receivedData = [NSMutableData dataWithLength:1024];
+		
 	}
 	return self;
 }
@@ -34,22 +35,6 @@
 {
     [super viewDidLoad];
 	[self refresh];
-	
-	BurndownClient* client = [BurndownClient sharedInstance];
-	[client getPath:@"sprints/current.json"
-		 parameters:nil
-			success:^(AFHTTPRequestOperation *operation, id responseObject) {
-				NSLog(@"%@", responseObject);
-			}
-			failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-				NSLog(@"Error: %@", error);
-			}];
-
-	JDGroupedFlipNumberView* flipView = [[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 5];
-    flipView.intValue = 11115;
-	//[flipView animateDownWithTimeInterval: 1.5];
-	//[flipView animateUpWithTimeInterval:1.5];
-    [self.view addSubview:flipView];
 }
 
 #pragma mark -
@@ -57,15 +42,39 @@
 
 - (void)refresh
 {
-	NSURL* url = [NSURL URLWithString:@"http://localhost:3000/sprints/current.json"];
-	
-	connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:url] delegate:self];
-	[connection start];
+	BurndownClient* client = [BurndownClient sharedInstance];
+	[client getPath:@"sprints/current.json"
+		 parameters:nil
+			success:^(AFHTTPRequestOperation *operation, id responseObject) {
+				sprint = [[Sprint alloc] initWithDictionary:responseObject[@"sprint"]];
+				[self updateView];
+			}
+			failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				NSLog(@"Error: %@", error);
+			}];
 }
 
 - (void)updateView
 {
-	NSLog(@"%@", json);
+	for (UIView* flipView in flipViews) {
+		[flipView removeFromSuperview];
+	}
+	
+	if (!sprint)
+		return;
+	
+	flipViews = [NSMutableArray arrayWithCapacity:sprint.graphs.count];
+	
+	for (int i = 0; i < sprint.graphs.count; ++i) {
+		Graph* graph = sprint.graphs[i];
+		JDGroupedFlipNumberView* flipView = [[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 5];
+		flipView.intValue = graph.currentValue;
+		CGRect frame = flipView.frame;
+		frame.origin.y = i * 80 + 20;
+		flipView.frame = frame;
+		[self.view addSubview:flipView];
+		[flipViews addObject:flipView];
+	}
 }
 
 @end

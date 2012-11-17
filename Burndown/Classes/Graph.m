@@ -7,16 +7,29 @@
 //
 
 #import "Graph.h"
+#import "DataPoint.h"
 
 @implementation Graph
 
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
 	if (self = [super init]) {
-		// TODO set label
-		// TODO add points
+		self.label = dictionary[@"label"];
+		NSMutableArray* points = [NSMutableArray arrayWithCapacity:[dictionary[@"points"] count]];
+		for (NSDictionary* pointData in dictionary[@"points"]) {
+			DataPoint* point = [[DataPoint alloc] initWithDictionary:pointData];
+			if (point)
+				[points addObject:point];
+		}
+		self.points = points;
 	}
 	return self;
+}
+
+- (NSInteger)currentValue
+{
+	DataPoint* lastPoint = [self.points lastObject];
+	return lastPoint.value;
 }
 
 @end

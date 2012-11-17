@@ -13,8 +13,7 @@
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
 	if (self = [super init]) {
-		// TODO set value
-		// TODO set date
+		self.value = [dictionary[@"value"] integerValue];
 	}
 	return self;
 }
