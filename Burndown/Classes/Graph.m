@@ -14,6 +14,7 @@
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
 	if (self = [super init]) {
+		self.ID = [dictionary[@"id"] integerValue];
 		self.label = dictionary[@"label"];
 		NSMutableArray* points = [NSMutableArray arrayWithCapacity:[dictionary[@"points"] count]];
 		for (NSDictionary* pointData in dictionary[@"points"]) {

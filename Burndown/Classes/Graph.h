@@ -8,6 +8,7 @@
 
 @interface Graph : NSObject
 
+@property (nonatomic) NSInteger ID;
 @property (nonatomic, strong) NSString* label;
 @property (nonatomic, strong) NSArray* points;
 

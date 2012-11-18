@@ -14,6 +14,7 @@
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
 	if (self = [super init]) {
+		self.ID = [dictionary[@"id"] integerValue];
 		self.number = [dictionary[@"number"] integerValue];
 		NSMutableArray* graphs = [NSMutableArray arrayWithCapacity:[dictionary[@"graphs"] count]];
 		for (NSDictionary* graphData in dictionary[@"graphs"]) {

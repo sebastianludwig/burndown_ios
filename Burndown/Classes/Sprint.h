@@ -8,6 +8,7 @@
 
 @interface Sprint : NSObject
 
+@property (nonatomic) NSInteger ID;
 @property (nonatomic) NSInteger number;
 @property (nonatomic, strong) NSArray* graphs;
 
