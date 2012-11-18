@@ -10,14 +10,15 @@
 
 #import "BurndownClient.h"
 #import <AFNetworking.h>
-#import "JDGroupedFlipNumberView.h"
+
 #import "Sprint.h"
 #import "Graph.h"
+#import "GraphView.h"
 
 @implementation ViewController
 {
 	Sprint* sprint;
-	NSMutableArray* flipViews;
+	NSMutableArray* graphViews;
 }
 
 #pragma mark -
@@ -56,24 +57,24 @@
 
 - (void)updateView
 {
-	for (UIView* flipView in flipViews) {
-		[flipView removeFromSuperview];
+	for (UIView* graphView in graphViews) {
+		[graphView removeFromSuperview];
 	}
 	
 	if (!sprint)
 		return;
 	
-	flipViews = [NSMutableArray arrayWithCapacity:sprint.graphs.count];
+	graphViews = [NSMutableArray arrayWithCapacity:sprint.graphs.count];
 	
 	for (int i = 0; i < sprint.graphs.count; ++i) {
 		Graph* graph = sprint.graphs[i];
-		JDGroupedFlipNumberView* flipView = [[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 5];
-		flipView.intValue = graph.currentValue;
-		CGRect frame = flipView.frame;
-		frame.origin.y = i * 80 + 20;
-		flipView.frame = frame;
-		[self.view addSubview:flipView];
-		[flipViews addObject:flipView];
+		GraphView* graphView = [[GraphView alloc] initWithGrpah:graph];
+		
+		CGRect frame = graphView.frame;
+		frame.origin.y = i * (frame.size.height + 20) + 20;
+		graphView.frame = frame;
+		[self.view addSubview:graphView];
+		[graphViews addObject:graphView];
 	}
 }
 
