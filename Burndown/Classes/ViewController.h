@@ -8,4 +8,6 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)submit;
+
 @end

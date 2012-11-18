@@ -161,6 +161,7 @@
 			children = (
 				9E44A436165804A40019D32C /* ViewController.h */,
 				9E44A437165804A40019D32C /* ViewController.m */,
+				9EE0C5121656D63100B485AC /* ViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -228,7 +229,6 @@
 				9E44A435165804920019D32C /* ViewController */,
 				9EE0C5061656D63100B485AC /* AppDelegate.h */,
 				9EE0C5071656D63100B485AC /* AppDelegate.m */,
-				9EE0C5121656D63100B485AC /* ViewController.xib */,
 				9EE0C4FE1656D63100B485AC /* Supporting Files */,
 			);
 			path = Burndown;
