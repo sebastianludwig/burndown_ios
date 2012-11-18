@@ -15,7 +15,7 @@
 	static BurndownClient* instance;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		instance = [[BurndownClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:3000/"]];
+		instance = [[BurndownClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:3000/api/v1/"]];
 	});
 	
 	return instance;
@@ -25,6 +25,9 @@
 {
 	if (self = [super initWithBaseURL:url]) {
 		[self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+		
+		[self setDefaultHeader:@"Accept" value:@"application/json;"];
+		[self setDefaultHeader:@"Content-Type" value:@"application/json"];
 	}
 	return self;
 }
