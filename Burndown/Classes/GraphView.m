@@ -29,7 +29,7 @@
 			
 			flipView = [[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 2];
 			flipView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-			flipView.intValue = self.graph.currentValue;
+			[flipView animateToValue:self.graph.currentValue withDuration:2];
 			CGRect frame = flipView.frame;
 			frame.origin.x = label.frame.size.width + 20;
 			flipView.frame = frame;

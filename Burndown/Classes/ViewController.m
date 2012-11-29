@@ -47,6 +47,20 @@
 
 #pragma mark Actions
 
+- (IBAction)refresh
+{
+	BurndownClient* client = [BurndownClient sharedInstance];
+	[client getPath:@"sprints/current"
+		 parameters:nil
+			success:^(AFHTTPRequestOperation *operation, id responseObject) {
+				sprint = [[Sprint alloc] initWithDictionary:responseObject[@"sprint"]];
+				[self updateView];
+			}
+			failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				NSLog(@"Error: %@", error);
+			}];
+}
+
 - (IBAction)submit
 {
 	BurndownClient* client = [BurndownClient sharedInstance];
@@ -69,20 +83,6 @@
 #pragma mark -
 #pragma mark ViewController
 
-- (void)refresh
-{
-	BurndownClient* client = [BurndownClient sharedInstance];
-	[client getPath:@"sprints/current"
-		 parameters:nil
-			success:^(AFHTTPRequestOperation *operation, id responseObject) {
-				sprint = [[Sprint alloc] initWithDictionary:responseObject[@"sprint"]];
-				[self updateView];
-			}
-			failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-				NSLog(@"Error: %@", error);
-			}];
-}
-
 - (void)updateView
 {
 	for (UIView* graphView in graphViews) {
@@ -100,7 +100,7 @@
 		graphView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		
 		CGRect frame = graphView.frame;
-		frame.origin.y = i * (frame.size.height + 20) + 20;
+		frame.origin.y = i * (frame.size.height + 20) + 100;
 		frame.size.width = self.view.frame.size.width;
 		graphView.frame = frame;
 		[self.view addSubview:graphView];

@@ -8,6 +8,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)refresh;
 - (IBAction)submit;
 
 @end
